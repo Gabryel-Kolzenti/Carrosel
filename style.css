@@ -1,0 +1,138 @@
+@charset "utf-8";
+@font-face {
+    font-family: font1;
+    src: url(fonts/ARMY\ RUST.ttf);
+}
+@font-face {
+    font-family: font2;
+    src: url(fonts/ARMY\ RUST.ttf);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* "v"funciona como % "vh" usamos para definir altura e "vw" largura */
+    width: 100vw;  /* "xxvh ou xxvw" irá usar xx% do total da tela na altura ou largura*/
+    background: url(img/avenida.jpeg);
+    background-size: cover;
+    background-position: 0% 60%;
+}
+
+header {
+    background: rgb(39, 39, 39);
+    display: flex;
+    justify-content: center;
+    margin-top: -0.8%;
+
+}
+
+header h1{
+    font-family: font1;
+    text-align: center;
+    color: aliceblue;
+    font-size: 2.4em;
+    margin-bottom: 0.8%;
+}
+
+header img {
+    height: 30%;
+    width: 5%;
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-top: 2%;
+    padding-bottom: -15px;
+}
+
+.container{
+    height: 460px;
+    width: 800px;
+    overflow: hidden;
+    position: absolute; /* Possibilita mexer e posicionar a imagem/item */
+    top: 50%; /* Funciona como margin-top*/
+    left: 50%; /* Funciona como margin-left*/
+    transform: translate(-50%, -50%); /* Usado para modificar a posição do eixo central da imagem/item (a referência costuma ser na ponta e não no centro, por isso precisamos ajustar a posição do eixo)*/
+}
+
+.imagem img{
+    height: 100%;
+    width: 100%;
+}
+
+.bar {
+    background-color: rgb(8, 4, 253);
+    width: 30px;
+    height: 7px;
+    margin: 5px;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.navegacao {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+}
+
+.bar:hover{
+   background: rgb(81, 205, 243);
+}
+
+input{
+    display: none;
+}
+
+.imagens{
+    display: flex;
+    height: 100%;
+    width: 600%; /* Deve ser 6x maior, pois o flex fez o tamanho total ser dividido pelo número de imagens*/
+}
+
+.imagem{
+    width: 16.666666%; /* Deve ser 100%/6, pois a imagem que aumentamos, agora precisa ser dividida em partes iguais ao numero de imagens */
+    transition: 0.7s;
+    border-radius: 10px;
+}
+
+/* Quando o (imagem1 estiver checkado) --> .img1 */
+#imagem1:checked ~ .img1 {
+    margin-left: 0;
+}
+
+#imagem2:checked ~ .img1 {
+    margin-left: -16.666666%;
+}
+
+#imagem3:checked ~ .img1 {
+    margin-left: -33.3332%;
+}
+
+#imagem4:checked ~ .img1 {
+    margin-left: -50%;
+}
+
+#imagem5:checked ~ .img1 {
+    margin-left: -66.666666%;
+}
+
+#imagem6:checked ~ .img1 {
+    margin-left: -83.333266%;
+}
+
+footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background: rgb(22, 22, 22);
+    color: aliceblue;
+    padding-top: -15px;
+    padding-bottom: -15px;
+
+}
+
+footer p {
+    font-family: font2;
+    font-size: 1.2em;
+    text-align: center;
+}
